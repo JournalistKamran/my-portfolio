@@ -98,7 +98,7 @@
             background-position: center;
             background-repeat: no-repeat;
             /* IMPORTANT: This is now your profile photo as the background */
-            background-image: url("coverphoto.jpeg"); /* Using a wider placeholder for background */
+            background-image: url("images/coverphoto.jpeg"); /* Using a wider placeholder for background */
         }
 
         .image-overlay {
@@ -131,6 +131,40 @@
             color: #C0C0C0; /* Light gray for tagline */
             text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
         }
+
+                /* Photo Carousel specific styles */
+        #photoCarousel {
+            display: flex; /* Make it a flex container for horizontal items */
+            flex-wrap: nowrap; /* Prevent items from wrapping */
+            transform: translateX(0); /* Initial state */
+        }
+        .carousel-item {
+            flex: 0 0 100%; /* Each item takes full width of container */
+            display: flex; /* Ensures image and text are in column */
+            flex-direction: column; /* Stacks image on top of text */
+        }
+        .carousel-dot {
+            transition: background-color 0.3s ease;
+        }
+        .carousel-dot.active {
+            background-color: #00BFFF; /* Electric Blue for active dot */
+        }
+
+                /* Custom styles for skill badge toggle */
+        #hiddenSkills {
+            /* Initial state for hidden skills: hidden, no height, overflow hidden */
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transition for height and opacity */
+            opacity: 0;
+        }
+
+        #hiddenSkills.visible {
+            /* State when visible: auto height, full opacity */
+            max-height: 1000px; /* A value larger than the expected content height */
+            opacity: 1;
+        }
+
     </style>
 </head>
 <body class="antialiased">
@@ -235,28 +269,28 @@
                 </div>
             </div>
 
-            <!-- Photojournalism Sub-section -->
+            <!-- Photojournalism Sub-section 
             <h3 class="text-3xl md:text-4xl font-bold text-center section-heading mb-10 mt-20">Photojournalism</h3>
             <p class="text-lg text-center max-w-3xl mx-auto text-gray-400 mb-12">
                 My lens captures stories from the ground, transforming moments into visual narratives. Explore my photojournalism work, including mobile clicks, sequence storytelling, and street photography, directly on my Instagram.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Photojournalism Card 1: Mobile Clicks -->
+                <!-- Photojournalism Card 1: Mobile Clicks 
                 <div class="bg-gray-900 p-8 rounded-xl card-shadow flex flex-col h-full">
-                    <!-- IMPORTANT: Replace this URL with a permanent link to your actual photo. -->
+                    <!-- IMPORTANT: Replace this URL with a permanent link to your actual photo. 
                     <img src="https://placehold.co/600x400/1A1A1A/E0E0E0?text=Mobile+Clicks+Photo" alt="Mobile Clicks Photojournalism" class="w-full h-48 object-cover rounded-lg mb-4 border border-gray-700" />
                     <h4 class="text-2xl font-bold text-white mb-3">Mobile Clicks</h4>
                     <p class="text-gray-400 mb-4 text-base flex-grow">A collection of compelling images captured using only a mobile camera, showcasing everyday life and unique perspectives.</p>
                     <a href="https://www.instagram.com/kam.online/" target="_blank" class="inline-block mt-4 px-6 py-2 rounded-full text-sm font-semibold btn-primary text-center">View on Instagram</a>
                 </div>
-                <!-- Photojournalism Card 2: Sequence Storytelling -->
+                <!-- Photojournalism Card 2: Sequence Storytelling 
                 <div class="bg-gray-900 p-8 rounded-xl card-shadow flex flex-col h-full">
                     <img src="https://placehold.co/600x400/1A1A1A/E0E0E0?text=Sequence+Storytelling" alt="Sequence Storytelling Photojournalism" class="w-full h-48 object-cover rounded-lg mb-4 border border-gray-700" />
                     <h4 class="text-2xl font-bold text-white mb-3">Sequence Storytelling</h4>
                     <p class="text-gray-400 mb-4 text-base flex-grow">Photographs clicked in the fish market of Fort Kochi, narrating a story through a series of sequential images.</p>
                     <a href="https://www.instagram.com/kam.online/" target="_blank" class="inline-block mt-4 px-6 py-2 rounded-full text-sm font-semibold btn-primary text-center">View on Instagram</a>
                 </div>
-                <!-- Photojournalism Card 3: Street Photography -->
+                <!-- Photojournalism Card 3: Street Photography 
                 <div class="bg-gray-900 p-8 rounded-xl card-shadow flex flex-col h-full">
                     <img src="https://placehold.co/600x400/1A1A1A/E0E0E0?text=Street+Photography" alt="Street Photography Photojournalism" class="w-full h-48 object-cover rounded-lg mb-4 border border-gray-700" />
                     <h4 class="text-2xl font-bold text-white mb-3">Street Photography</h4>
@@ -267,51 +301,65 @@
             <div class="text-center mt-12">
                 <a href="https://www.instagram.com/kam.online/" target="_blank" class="inline-block px-8 py-3 rounded-full text-lg font-semibold btn-primary shadow-md">See All Photojournalism on Instagram @kam.online</a>
             </div>
+            -->
 
 
-        <!-- Writing Section (Static Placeholder) -->
-        <section id="writing" class="mb-24 scroll-mt-24">
-            <h2 class="text-4xl md:text-5xl font-bold text-center section-heading mb-12">My Latest Writings</h2>
-            <p class="text-lg text-center max-w-3xl mx-auto text-gray-400 mb-16">
-                Stay updated with my recent feature stories, national and international analyses, and columns on cyber-crime and digital policy.
-                <br/>
-                <em class="text-sm text-gray-500">(Note: In this static HTML version, articles are placeholders. For dynamic updates, a React/CMS version is recommended.)</em>
+
+                    <h3 class="text-3xl md:text-4xl font-bold text-center section-heading mb-10 mt-20">Photojournalism</h3>
+            <p class="text-lg text-center max-w-3xl mx-auto text-gray-400 mb-12">
+                My lens captures stories from the ground, transforming moments into visual narratives. Explore my photojournalism work, including mobile clicks, sequence storytelling, and street photography, directly on my Instagram.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Example Article Card 1 -->
-                <div class="bg-gray-900 p-8 rounded-xl card-shadow flex flex-col h-full">
-                    <h4 class="text-2xl font-bold text-white mb-3">Feature Story: The Silent Plight of Migrant Workers</h4>
-                    <p class="text-gray-400 mb-4 text-base flex-grow">A deep dive into the challenges faced by migrant workers in urban centers, highlighting their resilience and struggles.</p>
-                    <a href="#" onclick="alert('This is a placeholder article. Link to your actual article here!'); return false;" class="inline-block mt-4 px-6 py-2 rounded-full text-sm font-semibold btn-primary text-center">Read Article</a>
-                </div>
-                <!-- Example Article Card 2 -->
-                <div class="bg-gray-900 p-8 rounded-xl card-shadow flex flex-col h-full">
-                    <h4 class="text-2xl font-bold text-white mb-3">Global Perspectives: The Geopolitics of Digital Privacy</h4>
-                    <p class="text-gray-400 mb-4 text-base flex-grow">An analysis of how recent digital privacy laws are shaping international relations and data sovereignty.</p>
-                    <a href="#" onclick="alert('This is a placeholder article. Link to your actual article here!'); return false;" class="inline-block mt-4 px-6 py-2 rounded-full text-sm font-semibold btn-primary text-center">Read Column</a>
-                </div>
-                <!-- Example Article Card 3 -->
-                <div class="bg-gray-900 p-8 rounded-xl card-shadow flex flex-col h-full">
-                    <h4 class="text-2xl font-bold text-white mb-3">Cyber-Crime Column: The Rise of Ransomware in SMEs</h4>
-                    <p class="text-gray-400 mb-4 text-base flex-grow">Exploring the increasing threat of ransomware attacks and their devastating impact on small and medium-sized enterprises.</p>
-                    <a href="#" onclick="alert('This is a placeholder article. Link to your actual article here!'); return false;" class="inline-block mt-4 px-6 py-2 rounded-full text-sm font-semibold btn-primary text-center">Read Analysis</a>
-                </div>
-                <!-- Add more static article cards here as needed -->
-            </div>
-            <div class="text-center mt-12">
-                <p class="text-gray-400 text-lg">
-                    As a Multimedia Journalist, I continuously publish new stories.
-                </p>
-            </div>
-        </section>
 
-        <!-- Skills Section -->
+            <div class="relative w-full max-w-4xl mx-auto overflow-hidden rounded-xl card-shadow">
+                <div id="photoCarousel" class="flex transition-transform duration-500 ease-in-out">
+                    <div class="carousel-item">
+                        <img src="images/p1.jpeg" alt="[Descriptive Alt Text for Photo 1]" class="w-full h-[500px] object-cover rounded-t-xl" />
+                        <div class="p-8 bg-gray-900 rounded-b-xl">
+                            <h4 class="text-2xl font-bold text-white mb-3">Photo Series Title 1</h4>
+                            <p class="text-gray-400 mb-4 text-base">Brief description of the photo series or individual photo.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/p2.jpeg" alt="[Descriptive Alt Text for Photo 2]" class="w-full h-[500px] object-cover rounded-t-xl" />
+                        <div class="p-8 bg-gray-900 rounded-b-xl">
+                            <h4 class="text-2xl font-bold text-white mb-3">Photo Series Title 2</h4>
+                            <p class="text-gray-400 mb-4 text-base">Brief description of the photo series or individual photo.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/p3.jpeg" alt="[Descriptive Alt Text for Photo 3]" class="w-full h-[500px] object-cover rounded-t-xl" />
+                        <div class="p-8 bg-gray-900 rounded-b-xl">
+                            <h4 class="text-2xl font-bold text-white mb-3">Photo Series Title 3</h4>
+                            <p class="text-gray-400 mb-4 text-base">Brief description of the photo series or individual photo.</p>
+                        </div>
+                    </div>
+
+                    </div>
+
+                <button id="prevBtn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-70 text-white p-3 rounded-full shadow-lg hover:bg-opacity-100 transition focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextBtn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-70 text-white p-3 rounded-full shadow-lg hover:bg-opacity-100 transition focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    <button class="carousel-dot w-3 h-3 bg-gray-500 rounded-full hover:bg-blue-400 transition focus:outline-none focus:ring-2 focus:ring-blue-400" data-index="0" aria-label="Go to slide 1"></button>
+                    <button class="carousel-dot w-3 h-3 bg-gray-500 rounded-full hover:bg-blue-400 transition focus:outline-none focus:ring-2 focus:ring-blue-400" data-index="1" aria-label="Go to slide 2"></button>
+                    <button class="carousel-dot w-3 h-3 bg-gray-500 rounded-full hover:bg-blue-400 transition focus:outline-none focus:ring-2 focus:ring-blue-400" data-index="2" aria-label="Go to slide 3"></button>
+                    </div>
+            </div>
+           
+                <!-- Skills Section -->
         <section id="skills" class="mb-24 scroll-mt-24">
             <h2 class="text-4xl md:text-5xl font-bold text-center section-heading mb-12">My Skills</h2>
             <p class="text-lg text-center max-w-3xl mx-auto text-gray-400 mb-12">
                 My journalistic toolkit is built on a foundation of rigorous research, ethical reporting, and clear communication, enhanced by technical proficiency and strategic outreach capabilities.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- First 8 skill badges (2 rows of 4) - These will always be visible -->
                 <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
                     <span class="text-6xl mb-4 block text-blue-400">📖</span>
                     <h3 class="text-xl font-bold text-white mb-2">Digital Storytelling</h3>
@@ -320,7 +368,7 @@
                 <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
                     <span class="text-6xl mb-4 block text-blue-400">📣</span>
                     <h3 class="text-xl font-bold text-white mb-2">Strategic Communication</h3>
-                    <p class="text-gray-400 text-sm">Developing effective communication strategies for diverse audiences.</p>
+                    <p class="text-400 text-sm">Developing effective communication strategies for diverse audiences.</p>
                 </div>
                 <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
                     <span class="text-6xl mb-4 block text-blue-400">🔍</span>
@@ -352,49 +400,61 @@
                     <h3 class="text-xl font-bold text-white mb-2">SEO & Social Media Campaigns</h3>
                     <p class="text-gray-400 text-sm">Optimizing content for search engines and managing social media outreach.</p>
                 </div>
-                <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
-                    <span class="text-6xl mb-4 block text-blue-400">🧠</span>
-                    <h3 class="text-xl font-bold text-white mb-2">Research & Content Strategy</h3>
-                    <p class="text-gray-400 text-sm">Developing robust research frameworks and strategic content plans.</p>
+
+                <!-- Hidden skill badges container -->
+                <!-- The 'col-span-full' ensures that this div takes the full width of the parent grid when visible,
+                     allowing its internal grid to lay out correctly. -->
+                <div id="hiddenSkills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 col-span-full">
+                    <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
+                        <span class="text-6xl mb-4 block text-blue-400">🧠</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Research & Content Strategy</h3>
+                        <p class="text-gray-400 text-sm">Developing robust research frameworks and strategic content plans.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
+                        <span class="text-6xl mb-4 block text-blue-400">✅</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Fact-Checking & Verification</h3>
+                        <p class="text-gray-400 text-sm">Rigorous verification of information to ensure accuracy and combat misinformation.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
+                        <span class="text-6xl mb-4 block text-blue-400">🗣️</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Multilingual Proficiency</h3>
+                        <p class="text-gray-400 text-sm">Fluent in English, Hindi, and Urdu for broad communication.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
+                        <span class="text-6xl mb-4 block text-blue-400">🚶‍♂️</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Ground Reporting</h3>
+                        <p class="text-gray-400 text-sm">On-the-ground reporting to capture authentic perspectives and local issues.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
+                        <span class="text-6xl mb-4 block text-blue-400">📢</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Public Relations</h3>
+                        <p class="text-gray-400 text-sm">Managing public perception and fostering positive relationships for organizations.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
+                        <span class="text-6xl mb-4 block text-blue-400">📰</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Press Release Writing</h3>
+                        <p class="text-gray-400 text-sm">Crafting clear, concise, and impactful press releases for media dissemination.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
+                        <span class="text-6xl mb-4 block text-blue-400">💡</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Advertisement & Copywriting</h3>
+                        <p class="text-gray-400 text-sm">Developing persuasive ad copy and creative content for various campaigns.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
+                        <span class="text-6xl mb-4 block text-blue-400">🖋️</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Urdu Language Expertise</h3>
+                        <p class="text-gray-400 text-sm">Proficient in reading, writing, and speaking Urdu, including content creation.</p>
+                    </div>
                 </div>
-                <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
-                    <span class="text-6xl mb-4 block text-blue-400">✅</span>
-                    <h3 class="text-xl font-bold text-white mb-2">Fact-Checking & Verification</h3>
-                    <p class="text-gray-400 text-sm">Rigorous verification of information to ensure accuracy and combat misinformation.</p>
-                </div>
-                <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
-                    <span class="text-6xl mb-4 block text-blue-400">🗣️</span>
-                    <h3 class="text-xl font-bold text-white mb-2">Multilingual Proficiency</h3>
-                    <p class="text-gray-400 text-sm">Fluent in English, Hindi, and Urdu for broad communication.</p>
-                </div>
-                <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
-                    <span class="text-6xl mb-4 block text-blue-400">🚶‍♂️</span>
-                    <h3 class="text-xl font-bold text-white mb-2">Ground Reporting</h3>
-                    <p class="text-gray-400 text-sm">On-the-ground reporting to capture authentic perspectives and local issues.</p>
-                </div>
-                <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
-                    <span class="text-6xl mb-4 block text-blue-400">📢</span>
-                    <h3 class="text-xl font-bold text-white mb-2">Public Relations</h3>
-                    <p class="text-gray-400 text-sm">Managing public perception and fostering positive relationships for organizations.</p>
-                </div>
-                <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
-                    <span class="text-6xl mb-4 block text-blue-400">📰</span>
-                    <h3 class="text-xl font-bold text-white mb-2">Press Release Writing</h3>
-                    <p class="text-gray-400 text-sm">Crafting clear, concise, and impactful press releases for media dissemination.</p>
-                </div>
-                <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
-                    <span class="text-6xl mb-4 block text-blue-400">💡</span>
-                    <h3 class="text-xl font-bold text-white mb-2">Advertisement & Copywriting</h3>
-                    <p class="text-gray-400 text-sm">Developing persuasive ad copy and creative content for various campaigns.</p>
-                </div>
-                <div class="bg-gray-900 p-8 rounded-xl card-shadow text-center">
-                    <span class="text-6xl mb-4 block text-blue-400">🖋️</span>
-                    <h3 class="text-xl font-bold text-white mb-2">Urdu Language Expertise</h3>
-                    <p class="text-gray-400 text-sm">Proficient in reading, writing, and speaking Urdu, including content creation.</p>
-                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button id="toggleSkillsBtn" class="px-8 py-3 rounded-full text-lg font-semibold btn-primary shadow-md">
+                    Show More Skills
+                </button>
             </div>
         </section>
 
+ 
         <!-- Contact Section -->
         <section id="contact" class="scroll-mt-24">
             <h2 class="text-4xl md:text-5xl font-bold text-center section-heading mb-12">Get in Touch</h2>
@@ -477,7 +537,84 @@
                 });
             });
         }
-    });
+    
+
+
+                // Photo Carousel Logic - START
+        const carousel = document.getElementById('photoCarousel');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentIndex = 0;
+        const totalItems = carouselItems.length;
+
+        function updateCarousel() {
+            // Calculate the translation needed. Each item is 100% width.
+            const offset = -currentIndex * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+
+            // Update active dot
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function showNext() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        }
+
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems; // + totalItems to handle negative modulo result
+            updateCarousel();
+        }
+
+        // Event Listeners for buttons
+        if (prevBtn) {
+            prevBtn.addEventListener('click', showPrev);
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', showNext);
+        }
+
+        // Event Listeners for dots
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                currentIndex = parseInt(e.target.dataset.index);
+                updateCarousel();
+            });
+        });
+
+        // Initialize carousel on load
+        updateCarousel();
+        // Photo Carousel Logic - END
+
+            // Skill badges toggle logic - START
+        const toggleSkillsBtn = document.getElementById('toggleSkillsBtn');
+        const hiddenSkills = document.getElementById('hiddenSkills');
+
+        if (toggleSkillsBtn && hiddenSkills) {
+            // Set initial state: hiddenSkills should be hidden by default
+            hiddenSkills.classList.remove('visible'); // Ensure it's not visible initially
+
+            toggleSkillsBtn.addEventListener('click', () => {
+                hiddenSkills.classList.toggle('visible'); // Toggles the 'visible' class
+                if (hiddenSkills.classList.contains('visible')) {
+                    toggleSkillsBtn.textContent = 'Show Less Skills';
+                } else {
+                    toggleSkillsBtn.textContent = 'Show More Skills';
+                }
+            });
+        }
+        // Skill badges toggle logic - END
+    })
+    
+
 </script>
 
 </body>
